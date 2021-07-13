@@ -9,7 +9,6 @@ static char *font = "xos4 Terminus:pixelsize=20";
 
 /* Spare fonts */
 static char *font2[] = {
-//  "FiraCode:size=12",
   "NotoSansDevanagari:size=20",
   "JoyPixels:pixelsize=10:antialias:true:autohint:true",
   "NotoColorEmoji:pixelsize=10:antialias:true:autohint:true"
