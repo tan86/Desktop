@@ -1,0 +1,11 @@
+#!/bin/sh
+
+old_brightness=$(cat /sys/class/backlight/amdgpu_bl0/brightness)
+max_brightness=$(cat /sys/class/backlight/amdgpu_bl0/max_brightness)
+
+old_bn_p=$((100 * $old_brightness / $max_brightness ))
+new_bn_p=$(($old_bn_p $1))
+
+new_brightness=$((max_brightness * new_bn_p / 100))
+
+echo $new_brightness > "/sys/class/backlight/amdgpu_bl0/brightness"

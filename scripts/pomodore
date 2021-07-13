@@ -1,0 +1,7 @@
+#/bin/sh
+while true; do
+sleep 2100 && notify-send "Take a Break"; sleep 300 && notify-send "Back to Work";
+sleep 2100 && notify-send "Take a Break"; sleep 300 && notify-send "Back to Work";
+sleep 2100 && notify-send "Take a Break"; sleep 300 && notify-send "Back to Work";
+sleep 2100 && notify-send "Long Break"; sleep 1000 && notify-send "Back to Work";
+done

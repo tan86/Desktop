@@ -1,0 +1,7 @@
+#!/bin/sh
+bat=`cat /sys/class/power_supply/BAT1/capacity`;
+#bstatus=$(cat /sys/class/power_supply/BAT1/status);
+[ "$bat" -le "20" ] && notify-send "Charge me";
+[ "$bat" -ge "60" ] && notify-send "Full";
+echo $bat
+#[[ "$bstatus" -eq "Discharging" ]] && echo $bat || echo $bat"C";
