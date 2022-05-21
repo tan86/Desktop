@@ -1,17 +1,17 @@
-#!/bin/bash
-Counter=0
-while [[ Counter -le 255 ]]
-do
-	for c in {0..15}
-	do
-		col=$(( $Counter + $c ))
-		[[ $col -ge 0 && $col -le 9 ]] && echo -n -e "\E[38;5;` expr $col - 1`m\E[48;5;"$col"m $col   ";
-		[[ $col -ge 10 && $col -le 99 ]] && echo -n -e "\E[38;5;` expr $col - 8`m\E[48;5;"$col"m $col  ";
-		[[ $col -ge 100 && $col -le 255 ]] && echo -n -e "\E[38;5;` expr $col - 8`m\E[48;5;"$col"m $col ";
-		tput sgr0;
-		echo -n " "
-	done
-	Counter=$(( $Counter + 16 ))
-	tput sgr0
-	echo
+#!/bin/bash                                                                                                     
+Counter=0                                                                                                       
+while [[ Counter -le 255 ]]                                                                                     
+do                                                                                                              
+        for c in {0..15}                                                                                        
+        do                                                                                                      
+                col=$(( Counter + c ))                                                                          
+                [[ $col -ge 0 && $col -le 9 ]] && echo -n -e "\E[38;5;$((col-1))m\E[48;5;$((col))m $col   ";    
+                [[ $col -ge 10 && $col -le 99 ]] && echo -n -e "\E[38;5;$((col-8))m\E[48;5;$((col))m $col  ";   
+                [[ $col -ge 100 && $col -le 255 ]] && echo -n -e "\E[38;5;$((col-8))m\E[48;5;$((col))m $col ";  
+                tput sgr0;                                                                                      
+                echo -n " "                                                                                     
+        done
+        Counter=$(( Counter + 16 ))
+        tput sgr0
+        echo
 done
